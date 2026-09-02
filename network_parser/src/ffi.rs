@@ -1,5 +1,9 @@
 use crate::error::ParseError;
 
+/// Represents the classification result returned to the C FFI caller.
+/// 
+/// This struct uses `repr(C)` to guarantee a stable memory layout compatible
+/// with the VPP C plugin.
 #[repr(C)]
 pub struct ClassifyResult {
     pub is_valid: bool,
@@ -8,7 +12,7 @@ pub struct ClassifyResult {
     pub error_code: u32, // 0 = OK, other = mapping ParseError
 }
 
-/// Mapping parsing error into u32 for C ABI
+/// Maps internal Rust parsing errors into a `u32` code for the C ABI.
 fn map_error_to_code(err: &ParseError) -> u32 {
     match err {
         ParseError::PacketTooShort => 1,
@@ -21,9 +25,15 @@ fn map_error_to_code(err: &ParseError) -> u32 {
     }
 }
 
+/// Classifies a raw packet buffer provided by the VPP framework.
+///
+/// This is the primary FFI entry point. It wraps the safe `parse_packet` logic,
+/// ensuring zero-copy and zero-allocation parsing on the hot path.
+/// 
 /// # Safety
 /// 1. `data` must be a valid pointer to a memory block of at least `len` bytes.
 /// 2. The memory must not be mutated while this function runs.
+/// 
 /// Validation: The length is validated safely inside the Rust parser logic before accessing headers.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> ClassifyResult {
@@ -36,7 +46,7 @@ pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> Classif
         };
     }
 
-    // Unsafe block justification: We cross the FFI boundary here.
+    // Unsafe block justification: Crossing the FFI boundary here.
     // We assume VPP passes a valid vlib_buffer_t payload pointer and length.
     let slice = unsafe { std::slice::from_raw_parts(data, len) };
 
