@@ -87,9 +87,11 @@ rust_classify_node_fn (vlib_main_t * vm,
             u8 * data = vlib_buffer_get_current (b0);
             u32 len = b0->current_length;
 
-            /* 
-             * Unsafe assumption: data points to valid memory managed by VPP, 
-             * and len is bounded by buffer size. FFI call is zero-allocation.
+            /*
+             * UNSAFE BOUNDARY JUSTIFICATION
+             * - Why unsafe is required: Passing raw memory pointers (u8*) and length across the FFI boundary to Rust.
+             * - Assumptions: 'data' points to a valid, contiguous memory block owned by VPP. 'len' correctly reflects the initialized packet payload size.
+             * - Validation: vlib_buffer_get_current() and b0->current_length are guaranteed by VPP's memory manager. The Rust parser safely validates length boundaries before accessing protocol headers. No payload copies occur.
              */
 
             ClassifyResult res = packet_classify(data, len);
