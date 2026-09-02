@@ -24,9 +24,9 @@ pub fn parse_packet<'a>(data: &'a [u8]) -> Result<Packet<'a>, ParseError> {
     let (ipv4, post_ipv4parse_data) = parse_ipv4(post_ethparse_data)?;
 
     if ipv4.protocol != 17 {
-        return Err(ParseError::UnsupportedProtocol)
+        return Err(ParseError::UnsupportedProtocol);
     }
-    
+
     let udp = parse_udp(post_ipv4parse_data)?;
 
     Ok(Packet {

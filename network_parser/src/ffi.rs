@@ -3,9 +3,9 @@ use crate::error::ParseError;
 #[repr(C)]
 pub struct ClassifyResult {
     pub is_valid: bool,
-    pub protocol: u8,      // 0 = unknown, 1 = udp
+    pub protocol: u8, // 0 = unknown, 1 = udp
     pub dest_port: u16,
-    pub error_code: u32,   // 0 = OK, other = mapping ParseError
+    pub error_code: u32, // 0 = OK, other = mapping ParseError
 }
 
 /// Mapping parsing error into u32 for C ABI
@@ -29,7 +29,10 @@ fn map_error_to_code(err: &ParseError) -> u32 {
 pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> ClassifyResult {
     if data.is_null() || len == 0 {
         return ClassifyResult {
-            is_valid: false, protocol: 0, dest_port: 0, error_code: 1, // 1 = PacketTooShort/Null
+            is_valid: false,
+            protocol: 0,
+            dest_port: 0,
+            error_code: 1, // 1 = PacketTooShort/Null
         };
     }
 
@@ -39,7 +42,7 @@ pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> Classif
 
     match crate::parse_packet(slice) {
         Ok(packet) => {
-            let udp = packet.udp.unwrap(); 
+            let udp = packet.udp.unwrap();
             ClassifyResult {
                 is_valid: true,
                 protocol: 1, // 1 = udp
@@ -47,13 +50,11 @@ pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> Classif
                 error_code: 0,
             }
         }
-        Err(e) => {
-            ClassifyResult {
-                is_valid: false,
-                protocol: 0,
-                dest_port: 0,
-                error_code: map_error_to_code(&e),
-            }
-        }
+        Err(e) => ClassifyResult {
+            is_valid: false,
+            protocol: 0,
+            dest_port: 0,
+            error_code: map_error_to_code(&e),
+        },
     }
 }
