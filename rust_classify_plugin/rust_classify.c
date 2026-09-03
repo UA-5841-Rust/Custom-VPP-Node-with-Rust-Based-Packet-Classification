@@ -101,12 +101,12 @@ rust_classify_node_fn (vlib_main_t * vm,
                 forwarded_ok++;
             } else {
                 next0 = RUST_CLASSIFY_NEXT_DROP;
-                if (res.error_code == 7) { /* 7 = UnsupportedProtocol*/
-                    unsupported_protocol++; 
+                const u32 unsupported_protocol_error_code = 7; /* ParseError::UnsupportedProtocol */
+                if (res.error_code == unsupported_protocol_error_code) {
+                    unsupported_protocol++;
                 } else {
                     malformed_packet++;
                 }
-            }
 
             /*For Tracing*/
             if (PREDICT_FALSE ((node->flags & VLIB_NODE_FLAG_TRACE) && (b0->flags & VLIB_BUFFER_IS_TRACED))) {

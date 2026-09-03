@@ -37,7 +37,7 @@ fn test_successful_parsing() {
     assert_eq!(ipv4.version, 4);
     assert_eq!(ipv4.protocol, 17);
 
-    let udp = packet.udp.expect("Missing UPD header");
+    let udp = packet.udp.expect("Missing UDP header");
     assert_eq!(udp.source_port, 1234);
     assert_eq!(udp.length, 13);
     assert_eq!(udp.payload, b"hello");
