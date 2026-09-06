@@ -1,43 +1,10 @@
-# Перевірка у WSL / Linux
+# WSL / Linux validation
 
-Це наступний етап роботи. Наведені VPP-команди ще не виконані в цьому проєкті.
-Ціль для початкової перевірки — VPP `stable/2506`; сумісність потрібно підтвердити
-реальною збіркою. Якщо у тебе вже є версія VPP від ментора, спочатку звіримо її,
-а не перевстановлюватимемо середовище. WSL2 потрібен для Linux-частини; придатність
-його конфігурації до VPP-тестів перевіримо окремо.
+This document records the Linux workflow used to build and validate the plugin.
 
-## 1. Огляд середовища
+## Build and test
 
-У PowerShell: `wsl --list --verbose`. Усередині Ubuntu:
-
-```bash
-uname -a
-cat /etc/os-release
-rustc --version
-cargo --version
-cc --version
-cmake --version
-```
-
-Потрібні Linux Rust toolchain, C/C++ toolchain і залежності обраної версії VPP.
-Для VPP, зібраного з source, користуйся його `make install-dep` та інструкціями
-ментора. Не збирай Cargo/VPP через `sudo`: права можуть бути потрібні для
-встановлення залежностей і запуску тестів, але не для компіляції.
-
-Репозиторій у Windows доступний як:
-
-```bash
-cd /mnt/c/Users/user/Desktop/RUST/week3/Custom-VPP-Node-with-Rust-Based-Packet-Classification
-```
-
-Для тривалих збірок бажано розмістити робочі файли й VPP у Linux-файловій системі.
-Перенесення робитимемо окремо, зберігши локальні коміти та поточну гілку. Не
-потрібно пушити на GitHub, щоб перенести роботу у WSL. Windows `.lib`/`.dll`
-не підходять для Linux-плагіна — Cargo має створити Linux `.a`/`.so`.
-
-## 2. Rust та C ABI
-
-З кореня цього репозиторію:
+Install VPP dependencies with `make install-dep`, then run from the repository:
 
 ```bash
 bash scripts/check-rust.sh
@@ -47,89 +14,59 @@ python -m pip install -r scripts/requirements.txt
 python scripts/check_fixtures.py target/release/libnetwork_parser.so
 ```
 
-Скрипт перевіряє fmt, Clippy, Rust-тести, release і C-програму, яка викликає
-реальний ABI. Python додатково звіряє Scapy-сценарії з бібліотекою та PCAP.
-
-## 3. Підключення до VPP
-
-Приклад, якщо checkout VPP знаходиться у `~/vpp`:
+With VPP checked out in `~/vpp`, connect the plugin and build both variants:
 
 ```bash
 bash scripts/prepare-vpp.sh ~/vpp
 cd ~/vpp
-make build
-make build-release
+make build MAKE_PARALLEL_JOBS=2
+make build-release MAKE_PARALLEL_JOBS=2
 ```
 
-Скрипт створює два симлінки: плагін у `src/plugins/rust_classify` і тест у `test/`.
-Існуючі чужі файли він не перезаписує. CMake сам збирає Linux Rust archive з PIC
-в окремій папці VPP build. Не потрібно копіювати `.a` вручну. Для debug VPP Rust
-поки теж збирається в release; для покрокового входу в Rust можна окремо змінити
-профіль збірки після первинної перевірки.
+The plugin registers `rust-classify-node` and `rust-classify-forward`. Enable it
+on a test interface with `rust classify pg0` in the VPP CLI.
 
-Після запуску зібраного VPP (наприклад, `make run` для debug) у його CLI:
-
-```text
-show plugins
-show node rust-classify-node
-show node rust-classify-forward
-```
-
-На WSL почнемо з packet-generator без фізичної NIC і DPDK. Якщо типовий startup
-вимагає недоступні драйвери/hugepages, налаштуємо конфігурацію за фактичним
-повідомленням про помилку.
-
-## 4. Автоматизовані тести VPP
-
-У checkout VPP:
+Run the integration tests:
 
 ```bash
-make test TEST=test_rust_classify
-make test-debug TEST=test_rust_classify
+make test-debug TEST=test_rust_classify MAKE_PARALLEL_JOBS=2
+make test TEST=test_rust_classify MAKE_PARALLEL_JOBS=2
 ```
 
-Тести перевіряють точні байти Ethernet echo, відкидання некоректних пакетів,
-лічильники, trace, 1100 пакетів за один сценарій і вимкнення feature.
-Системне оточення та Python-залежності VPP налаштовує його test framework.
-Збережи повний лог і версію `git rev-parse HEAD` VPP як evidence.
+Both variants passed all three tests. The tests cover Ethernet echo forwarding,
+invalid-packet drops, counters, trace output, 1,100 packets across vectors, and
+feature disablement.
 
-## 5. Ручний packet-generator
+## Manual validation
 
-У цьому репозиторії, з активованим Python venv:
+Generate packet-generator fixtures with:
 
 ```bash
 python scripts/generate_packets.py /tmp/rust-classify-packets
 ```
 
-У **новому** екземплярі VPP, без уже створеного `pg0`:
+In a fresh VPP instance run `exec /tmp/rust-classify-packets/run.cli`, then use
+`show errors`, `show trace`, and `show run`. The recorded counters were:
 
 ```text
-exec /tmp/rust-classify-packets/run.cli
-show packet-generator
-show errors
-show trace
-show run
+forwarded_ok=2
+unsupported_protocol=4
+malformed_packet=5
+dropped=9
+chained_buffer=0
 ```
 
-Дочекайся завершення всіх streams перед звіркою. Очікувані значення після одного
-запуску: `forwarded_ok=2`, `unsupported_protocol=4`, `malformed_packet=5`,
-`dropped=9`, `chained_buffer=0`. Це очікування, а не вже отримані VPP-результати.
-У trace коректного пакета має бути `protocol 1 port 4321 valid 1 error 0`.
-Trace вмикаємо на `pg-input`, щоб downstream-нода могла записати свою частину.
+Runtime evidence is stored under `artifacts/`. The trace includes
+`protocol 1 port 4321 valid 1 error 0` for accepted UDP frames.
 
-## 6. GDB та завершення
+## GDB
+
+Run the C/Rust smoke test under GDB with:
 
 ```bash
-# У цьому репозиторії після check-rust.sh:
-gdb --args target/ffi-smoke
-# У checkout VPP:
-make debug
+gdb -q -batch -ex run -ex 'bt' --args ./target/ffi-smoke
 ```
 
-У GDB: `run`, за потреби breakpoint на `packet_classify`. Прожени пошкоджені PCAP
-у debug VPP. Порожній ввід, null/zero і всі короткі префікси перевіряє C smoke
-test: не створюй некоректний довільний вказівник і не очікуй, що Rust зможе
-перевірити доступність чужої пам'яті.
-
-Після проходження перевірок оновимо `docs/validation.md`, додамо справжні логи,
-підготуємо опис PR та зробимо один фінальний push за домовленістю.
+It completed with `C/Rust ABI smoke test passed`, exited normally, and reported
+no stack. See [validation.md](validation.md) and
+[ffi-boundary.md](ffi-boundary.md) for the detailed status and safety contract.
