@@ -45,7 +45,7 @@ This project implements a custom **Vector Packet Processing (VPP)** graph node t
 ## Repository Structure
 
 * `src/` — Rust-based zero-copy network parser library (`network_parser`) with C FFI bindings.
-* `rust_classify_plugin/` — The VPP C plugin source code registering the `rust-classify` graph node.
+* `rust_classify/` — The VPP C plugin source code registering the `rust-classify` graph node.
 * `test_rust_classify.py` — Python / Scapy functional test case for VPP's `make test` framework.
 * `MONITORING.md` — Guide on traffic generation, CLI tracing, and GDB debugging.
 * `PERFORMANCE.md` — Performance benchmarks, `show run` metrics, and FFI overhead analysis.
@@ -57,9 +57,9 @@ This project implements a custom **Vector Packet Processing (VPP)** graph node t
 To build and run this plugin, it must be placed inside your local VPP source tree.
 
 ### 1. Place the Plugin
-Copy the `rust_classify_plugin` directory into VPP's internal plugins source folder:
+Copy the `rust_classify` directory into VPP's internal plugins source folder:
 ```bash
-cp -r ./rust_classify_plugin /path/to/vpp/src/plugins/rust_classify
+cp -r ./rust_classify /path/to/vpp/src/plugins/rust_classify
 ```
 
 ### 2. Place the Python Test
