@@ -1,80 +1,78 @@
-# VPP node with Rust packet classification
+# VPP Node with Rust Packet Classification
 
-Навчальний VPP-плагін: нода на C передає Ethernet-кадр у безпечний Rust-парсер
-через FFI без копіювання payload. Коректний UDP проходить до Ethernet echo-ноди;
-пошкоджені та непідтримувані пакети переходять у `error-drop`.
+This educational VPP plugin classifies Ethernet II / IPv4 / UDP frames through
+an allocation-free Rust FFI function. Valid UDP packets are sent to an Ethernet
+echo node; malformed and unsupported packets are sent to `error-drop`.
 
-**Статус:** Rust і Scapy/ABI перевірені у Windows. C-плагін та інтеграційні
-VPP-тести написані, але ще потребують збірки й запуску у WSL/Linux.
-Деталі: [результати перевірок](docs/validation.md).
-
-## Потік обробки
+## Processing flow
 
 ```text
 pg-input / Ethernet device
     → device-input feature: rust-classify-node (C)
         → packet_classify(ptr, current_length) (Rust)
             → safe parse_packet
-        → valid UDP: rust-classify-forward → interface-output (той самий порт)
+        → valid UDP: rust-classify-forward → interface-output
         → invalid/unsupported: error-drop
 ```
 
-Echo міняє лише Ethernet source/destination MAC місцями. IP-адреси, UDP-порти
-й payload не змінюються. Це спосіб побачити, що класифікований пакет дійшов до
-наступної ноди; IP-маршрутизація й ARP для цього тесту не потрібні.
+The echo node swaps only the Ethernet source and destination MAC addresses.
+IP addresses, UDP ports, and payload remain unchanged. This makes forwarding
+observable without requiring IP routing or ARP.
 
-## Файли
+## Repository layout
 
-| Шлях | Призначення |
+| Path | Purpose |
 | --- | --- |
-| `src/` | Парсер із task_01 і новий allocation-free FFI |
-| `include/network_parser.h` | C ABI та стабільні коди помилок |
-| `plugin/` | C-ноди, CLI, feature registration, CMake |
-| `tests/*.rs` | Parser, FFI, ABI layout, edge cases, allocation test |
-| `tests/test_rust_classify.py` | VppTestCase: трафік, counters, trace, disable |
-| `tests/ffi_smoke.c` | Перевірка C → Rust зі статичним лінкуванням |
-| `scripts/` | Підключення до VPP, Scapy-сценарії, PCAP, локальні перевірки |
+| `src/` | Zero-copy parser and allocation-free Rust FFI |
+| `include/network_parser.h` | C ABI and stable error codes |
+| `plugin/` | C graph nodes, CLI, feature registration, and CMake |
+| `tests/*.rs` | Parser, FFI, ABI, edge-case, and allocation tests |
+| `tests/test_rust_classify.py` | VPP integration tests with Scapy |
+| `tests/ffi_smoke.c` | Static-link C/Rust ABI smoke test |
+| `scripts/` | VPP setup, packet fixtures, PCAP generation, and checks |
+| `docs/` | Assignment, WSL setup, FFI safety, provenance, and validation |
 
-## Запуск
+## Rust checks
 
-Rust можна перевірити прямо з кореня репозиторію:
+From the repository root:
 
 ```bash
 cargo fmt --check
 cargo clippy --all-targets -- -D warnings
 cargo test --all-targets
-cargo build --release
+cargo build --release --locked --offline
 ```
 
-Для VPP дивись [покрокову інструкцію WSL](docs/wsl.md). Після підключення й
-збірки плагіна feature вмикається в CLI VPP:
+For Linux/VPP setup, see [the WSL guide](docs/wsl.md). Once the plugin is built,
+enable or disable it on a test interface in the VPP CLI:
 
 ```text
 rust classify pg0
 rust classify pg0 disable
 ```
 
-Лічильники у `show errors` та `/err/rust-classify-node/`:
+## Counters
 
-- `forwarded_ok`: коректні UDP, передані наступній ноді;
-- `malformed_packet`: структурно некоректні пакети;
-- `unsupported_protocol`: EtherType/protocol/fragments або chained buffers;
-- `chained_buffer`: додаткова деталізація unsupported;
-- `dropped`: загальна кількість відкинутих, яку рахує `error-drop`.
+The node exposes these counters through `show errors`:
 
-Класифікаційні лічильники оновлюються пакетно, окремо для кожного worker.
+- `forwarded_ok`: structurally valid UDP frames sent to the next node;
+- `malformed_packet`: packets with invalid structure or lengths;
+- `unsupported_protocol`: unsupported EtherTypes, IP protocols, fragments, or chains;
+- `chained_buffer`: additional detail for non-contiguous VPP buffers;
+- `dropped`: total packets sent to `error-drop`.
 
-## Межі реалізації
+Classification counters are accumulated per frame and updated on the current
+VPP worker.
 
-- Ethernet II + IPv4 + UDP; без VLAN, IPv6 і reassembly.
-- Лише один суцільний VPP segment; chains відкидаються без копіювання.
-- Перевіряється структура та довжини, але не checksum чи вміст IP options.
-- Немає алокацій у звичайній класифікації. Увімкнений VPP trace може виділяти
-  діагностичну пам’ять і не входить до цього твердження.
-- Feature завершує input feature path через echo/drop; він призначений для
-  окремого тестового інтерфейсу, не для прозорого production routing.
-- Сумісність із конкретною збіркою VPP та WSL підтверджуватиметься запуском.
+## Scope and limitations
 
-[FFI, ownership та unsafe](docs/ffi-boundary.md) ·
-[Походження парсера](docs/provenance.md) ·
-[Оригінальне завдання](docs/assignment.md)
+- Supports Ethernet II, IPv4, and UDP only; VLAN, IPv6, and fragment reassembly are unsupported.
+- Only one contiguous VPP buffer segment is classified; chains are rejected without copying.
+- Header structure and lengths are checked, but IP/UDP checksums and option contents are not validated.
+- Normal classification performs no heap allocation. VPP diagnostic tracing may allocate trace storage.
+- The feature consumes the device-input path for the selected test interface and is intended as an educational echo/drop demonstration.
+- Performance profiling with `perf` was not performed.
+
+See [FFI ownership and unsafe-code notes](docs/ffi-boundary.md),
+[validation results](docs/validation.md),
+[parser provenance](docs/provenance.md), and [the original assignment](docs/assignment.md).
