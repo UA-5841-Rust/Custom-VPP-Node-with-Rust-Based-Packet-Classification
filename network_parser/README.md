@@ -1,17 +1,17 @@
-# Zero-copy network packet parser
+# Zero-Copy Network Packet Parser
 
-This project is a **zero-copy network packet parser** that was created to be used in the VPP custom plugin. It implements a zero-copy Ethernet II / IPv4 / UDP packet parser in Rust, with a safe Rust API and a C-compatible FFI layer.
-You can read more about it [here](https://github.com/UA-5841-Rust/zero-copy).
+This project is a **zero-copy network packet parser** designed for use within a custom VPP plugin. It implements a zero-copy Ethernet II / IPv4 / UDP packet parser in Rust, providing a safe Rust API alongside a C-compatible FFI layer.
+You can read more about the implementation [here](https://github.com/UA-5841-Rust/zero-copy).
 
-To write a plugin a header had to be created. It's just a contract of `network parser` for our plugin written on **C**. The header was generated and committed to the repository (`include/network_parser.h`).
-However, it can be generated as many times as you want - result will be the same.
+To integrate the library with our VPP plugin (which is written in **C**), a C-compatible header file acts as the binding contract. This header file has already been generated and committed to the repository at `include/network_parser.h`. 
+However, it can be re-generated at any time, and the output will remain consistent.
 
-To generate header use the command below:
+To re-generate the header, use the following command:
 
 ```bash
-    make generate_header
+make generate_header
 ```
 
-(_Before you try it, make sure you have [cbindgen](https://github.com/mozilla/cbindgen) installed_)
+*(Before running this command, ensure you have [cbindgen](https://github.com/mozilla/cbindgen) installed on your system).*
 
-You can test this project using `cargo test` as well as `make test` commands.
+You can run the project's unit tests using either the `cargo test` or `make test` commands.
