@@ -1,0 +1,711 @@
+make -C /home/user/vpp/build-root PLATFORM=vpp TAG=vpp_debug CC=clang vpp-install
+make[1]: Entering directory '/home/user/vpp/build-root'
+@@@@ Arch for platform 'vpp' is native @@@@
+@@@@ Finding source for external @@@@
+@@@@ Makefile fragment found in /home/user/vpp/build-data/packages/external.mk @@@@
+@@@@ Source found in /home/user/vpp/build @@@@
+@@@@ Arch for platform 'vpp' is native @@@@
+@@@@ Finding source for vpp @@@@
+@@@@ Makefile fragment found in /home/user/vpp/build-data/packages/vpp.mk @@@@
+@@@@ Source found in /home/user/vpp/src @@@@
+find: ‘/home/user/vpp/build-root/config.site’: No such file or directory
+@@@@ Configuring external: nothing to do @@@@
+@@@@ Building external: nothing to do @@@@
+@@@@ Installing external: nothing to do @@@@
+find: ‘/home/user/vpp/build-root/config.site’: No such file or directory
+@@@@ Configuring vpp: nothing to do @@@@
+@@@@ Building vpp in /home/user/vpp/build-root/build-vpp_debug-native/vpp @@@@
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+@@@@ Installing vpp @@@@
+[0/2] Re-checking globbed directories...
+[0/1] Install the project...
+-- Install configuration: "debug"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvppinfra.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libsvm.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libsvmdb.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/svmtool" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/svmdbtool" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvlib.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvlibmemory.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvlibmemoryclient.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vlib_vlibapi_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vlibmemoryclient_memclnt_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vlibmemory_vlib_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvlibapi.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvnet.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvatclient.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_interface_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_ip_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_arp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_ip6_nd_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_session_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_l2_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vnet_ipsec_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_dev_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_interface_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_interface_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ip_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_flow_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_flow_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_policer_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_policer_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_p2p_ethernet_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ethernet_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_l2_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_bond_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_classify_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ip_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_punt_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ip_neighbor_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_bfd_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_crypto_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ipsec_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ipsec_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_tcp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_udp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ipip_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_tunnel_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_mpls_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_sr_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_sr_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_sr_pt_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_ipfix_export_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_gso_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_span_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_pg_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_virtio_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_virtio_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_tapv2_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_pipe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_session_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_feature_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_fib_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_fib_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_mfib_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_qos_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_bier_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_syslog_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_teib_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_arp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_pl/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+ugins/vnet_ip6_nd_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vnet_rd_cp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vppctl" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_get_metrics" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_get_stats" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_prometheus_export" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvppmem_preload.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vpp_vpe_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vpp_vpe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vpp_api_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvatplugin.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_api_test" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_restart" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vat2" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvppcom.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvcl_ldpreload.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvppapiclient.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvapiclient.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/abf_test_plugin_abf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/abf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/acl_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/acl_test_plugin_acl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/acl_test_plugin_acl_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/acl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/adl_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/adl_test_plugin_adl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/adl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/af_packet_test_plugin_af_packet_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/af_packet_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/af_xdp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/af_xdp_test_plugin_af_xdp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/af_xdp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/arping_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/arping_test_plugin_arping_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/arping_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/auto_sdl_test_plugin_auto_sdl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/auto_sdl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/auto_sdl_unittest_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/avf_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/avf_test_plugin_avf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/avf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/bpf_trace_filter_test_plugin_bpf_trace_filter_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/bpf_trace_filter_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/bufmon_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/cdp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/cdp_test_plugin_cdp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/cdp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/cnat_test_plugin_cnat_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/cnat_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/crypto_sw_scheduler_test_plugin_crypto_sw_scheduler_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/crypto_sw_scheduler_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/ct6_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ct6_test_plugin_ct6_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ct6_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dev_ena_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dev_iavf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/dhcp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/dhcp_test_plugin_dhcp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/dhcp_test_plugin_dhcp6_pd_client_cp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/dhcp_test_plugin_dhcp6_ia_na_client_cp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dhcp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dispatch_trace_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dma_intel_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/dns_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/dns_test_plugin_dns_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dns_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dpdk_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/fateshare_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_fateshare_monitor" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/flowprobe_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/flowprobe_test_plugin_flowprobe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/flowprobe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/geneve_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/geneve_test_plugin_geneve_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/geneve_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/gre_test_plugin_gre_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/gre_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/gtpu_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/gtpu_test_plugin_gtpu_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/gtpu_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/hs_apps_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_echo" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vcl_test_server" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vcl_test_client" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/hsi_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/http_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/http_unittest_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/http_static_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/http_static_test_plugin_http_static_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/http_static_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/idpf_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/idpf_test_plugin_idpf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/idpf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/igmp_test_plugin_igmp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/igmp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/ikev2_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ikev2_test_plugin_ikev2_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ikev2_test_plugin_ikev2_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ikev2_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ila_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/ioam_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_pot_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_ioam_export_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_trace_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_ioam_vxlan_gpe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_vxlan_gpe_ioam_export_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_ioam_cache_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ioam_test_plugin_udp_ping_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ioam_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/ip_session_redirect_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ip_session_redirect_test_plugin_ip_session_redirect_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ip_session_redirect_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/l2tp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/l2tp_test_plugin_l2tp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/l2tp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/l3xc_test_plugin_l3xc_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/l3xc_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/lacp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lacp_test_plugin_lacp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/lacp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/lb_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lb_test_plugin_lb_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lb_test_plugin_lb_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/lb_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/liblcp.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/linux_cp_test_plugin_lcp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/linux_cp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/linux_cp_unittest_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/linux_nl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/lisp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lisp_test_plugin_lisp_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lisp_test_plugin_lisp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lisp_test_plugin_one_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lisp_test_plugin_lisp_gpe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/lisp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/lisp_unittest_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/lldp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/lldp_test_plugin_lldp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/lldp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/mactime_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/mactime_test_plugin_mactime_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/mactime_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/map_test_plugin_map_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/map_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/mdata_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/mdata_test_plugin_mdata_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/mdata_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/memif_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/memif_test_plugin_memif_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/memif_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/mss_clamp_test_plugin_mss_clamp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/mss_clamp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libnat.so.25.06.0" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat_test_plugin_nat44_ed_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat_test_plugin_nat_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nat_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat44_ei_test_plugin_nat44_ei_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat44_ei_test_plugin_nat_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nat44_ei_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/dslite_test_plugin_dslite_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/dslite_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat66_test_plugin_nat66_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat66_test_plugin_nat_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nat66_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/det44_test_plugin_det44_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/det44_test_plugin_nat_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/det44_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat64_test_plugin_nat64_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nat64_test_plugin_nat_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nat64_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/pnat_test_plugin_pnat_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/pnat_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/npt66_test_plugin_npt66_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/npt66_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/nsh_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nsh_test_plugin_nsh_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nsh_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/nsim_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/nsim_test_plugin_nsim_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/nsim_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/oddbuf_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/oddbuf_test_plugin_oddbuf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/oddbuf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/osi_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/perfmon_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/ping_test_plugin_ping_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ping_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/ppp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/pppoe_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/pppoe_test_plugin_pppoe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/pppoe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/prom_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/pvti_test_plugin_pvti_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/pvti_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/quic_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/quic_quicly_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/rdma_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/rdma_test_plugin_rdma_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/rdma_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/rust_classify_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/sflow_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/sflow_test_plugin_sflow_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/sflow_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/snort_test_plugin_snort_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/snort_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/srmpls_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/srmpls_test_plugin_sr_mpls_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srmpls_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srv6adflow_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srv6ad_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srv6am_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srv6as_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/srv6mobile_test_plugin_sr_mobile_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/srv6mobile_test_plugin_sr_mobile_types_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/srv6mobile_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/stn_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/stn_test_plugin_stn_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/stn_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/svs_test_plugin_svs_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/svs_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/tlsopenssl_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/tlsopenssl_test_plugin_tls_openssl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/tlsopenssl_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/tlspicotls_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/tracedump_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/tracedump_test_plugin_graph_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/tracedump_test_plugin_tracedump_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/tracedump_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/tracenode_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/tracenode_test_plugin_tracenode_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/tracenode_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/unittest_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/urpf_test_plugin_urpf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/urpf_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vhost_test_plugin_vhost_user_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/vhost_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vmxnet3_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vmxnet3_test_plugin_vmxnet3_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/vmxnet3_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_api_test_plugins/vrrp_test_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vrrp_test_plugin_vrrp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/vrrp_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vxlan-gpe_test_plugin_vxlan_gpe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/vxlan-gpe_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/vxlan_test_plugin_vxlan_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/vxlan_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vat2_plugins/wireguard_test_plugin_wireguard_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_plugins/wireguard_plugin.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_crypto_engines/ipsecmb_crypto_engine.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_crypto_engines/native_crypto_engine.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+-- Set non-toolchain portion of runtime path of "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu/vpp_crypto_engines/openssl_crypto_engine.so" to "/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/x86_64-linux-gnu"
+make[1]: Leaving directory '/home/user/vpp/build-root'
+make -C test VPP_BUILD_DIR=/home/user/vpp/build-root/build-vpp_debug-native/vpp VPP_BIN=/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp VPP_INSTALL_PATH=/home/user/vpp/build-root/install-vpp_debug-native/ EXTENDED_TESTS= DECODE_PCAPS= TEST_GCOV= PYTHON= OS_ID=ubuntu RND_SEED= CACHE_OUTPUT= TAG=vpp_debug test
+make[1]: Entering directory '/home/user/vpp/test'
+# pip version pinning
+Collecting pip===25.0.1
+  Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 5.3 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-25.0.1
+Collecting pip-tools===7.4.1
+  Downloading pip_tools-7.4.1-py3-none-any.whl.metadata (26 kB)
+Collecting build>=1.0.0 (from pip-tools===7.4.1)
+  Downloading build-1.6.0-py3-none-any.whl.metadata (5.6 kB)
+Collecting click>=8 (from pip-tools===7.4.1)
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: pip>=22.2 in /home/user/vpp/build-root/test/venv/lib/python3.12/site-packages (from pip-tools===7.4.1) (25.0.1)
+Collecting pyproject-hooks (from pip-tools===7.4.1)
+  Downloading pyproject_hooks-1.2.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting setuptools (from pip-tools===7.4.1)
+  Using cached setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting wheel (from pip-tools===7.4.1)
+  Using cached wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting packaging>=24.0 (from build>=1.0.0->pip-tools===7.4.1)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Downloading pip_tools-7.4.1-py3-none-any.whl (61 kB)
+Downloading build-1.6.0-py3-none-any.whl (31 kB)
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+Using cached setuptools-84.0.0-py3-none-any.whl (818 kB)
+Using cached wheel-0.48.0-py3-none-any.whl (33 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Installing collected packages: setuptools, pyproject-hooks, packaging, click, wheel, build, pip-tools
+Successfully installed build-1.6.0 click-8.5.0 packaging-26.3 pip-tools-7.4.1 pyproject-hooks-1.2.0 setuptools-84.0.0 wheel-0.48.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Collecting setuptools===75.3.0
+  Downloading setuptools-75.3.0-py3-none-any.whl.metadata (6.9 kB)
+Downloading setuptools-75.3.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 5.8 MB/s eta 0:00:00
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 84.0.0
+    Uninstalling setuptools-84.0.0:
+      Successfully uninstalled setuptools-84.0.0
+Successfully installed setuptools-75.3.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Collecting alabaster==0.7.13 (from -r /tmp/tmp_msbbqu6 (line 1))
+  Downloading alabaster-0.7.13-py3-none-any.whl (13 kB)
+Collecting attrs==25.3.0 (from -r /tmp/tmp_msbbqu6 (line 4))
+  Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+Collecting babel==2.17.0 (from -r /tmp/tmp_msbbqu6 (line 7))
+  Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 5.3 MB/s eta 0:00:00
+Collecting black==24.8.0 (from -r /tmp/tmp_msbbqu6 (line 10))
+  Downloading black-24.8.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 5.7 MB/s eta 0:00:00
+Collecting build==1.2.2.post1 (from -r /tmp/tmp_msbbqu6 (line 33))
+  Downloading build-1.2.2.post1-py3-none-any.whl (22 kB)
+Collecting certifi==2025.1.31 (from -r /tmp/tmp_msbbqu6 (line 36))
+  Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+Collecting cffi==1.17.1 (from -r /tmp/tmp_msbbqu6 (line 39))
+  Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+Collecting charset-normalizer==3.4.1 (from -r /tmp/tmp_msbbqu6 (line 107))
+  Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
+Collecting click==8.1.8 (from -r /tmp/tmp_msbbqu6 (line 200))
+  Downloading click-8.1.8-py3-none-any.whl (98 kB)
+Collecting commonmark==0.9.1 (from -r /tmp/tmp_msbbqu6 (line 203))
+  Downloading commonmark-0.9.1-py2.py3-none-any.whl (51 kB)
+Collecting cryptography==44.0.2 (from -r /tmp/tmp_msbbqu6 (line 206))
+  Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 5.5 MB/s eta 0:00:00
+Collecting deprecation==2.1.0 (from -r /tmp/tmp_msbbqu6 (line 242))
+  Downloading deprecation-2.1.0-py2.py3-none-any.whl (11 kB)
+Collecting docutils==0.20.1 (from -r /tmp/tmp_msbbqu6 (line 245))
+  Downloading docutils-0.20.1-py3-none-any.whl (572 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 572.7/572.7 kB 6.7 MB/s eta 0:00:00
+Collecting idna==3.10 (from -r /tmp/tmp_msbbqu6 (line 248))
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+Collecting imagesize==1.4.1 (from -r /tmp/tmp_msbbqu6 (line 251))
+  Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+Collecting importlib-metadata==8.5.0 (from -r /tmp/tmp_msbbqu6 (line 254))
+  Downloading importlib_metadata-8.5.0-py3-none-any.whl (26 kB)
+Collecting importlib-resources==6.4.5 (from -r /tmp/tmp_msbbqu6 (line 257))
+  Downloading importlib_resources-6.4.5-py3-none-any.whl (36 kB)
+Collecting jinja2==3.1.6 (from -r /tmp/tmp_msbbqu6 (line 260))
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting jsonschema==4.23.0 (from -r /tmp/tmp_msbbqu6 (line 263))
+  Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+Collecting jsonschema-specifications==2023.12.1 (from -r /tmp/tmp_msbbqu6 (line 266))
+  Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
+Collecting lark-parser==0.6.7 (from -r /tmp/tmp_msbbqu6 (line 269))
+  Downloading lark-parser-0.6.7.tar.gz (260 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting markupsafe==2.1.5 (from -r /tmp/tmp_msbbqu6 (line 271))
+  Downloading MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
+Collecting mypy-extensions==1.0.0 (from -r /tmp/tmp_msbbqu6 (line 332))
+  Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+Collecting noiseprotocol==0.3.1 (from -r /tmp/tmp_msbbqu6 (line 335))
+  Downloading noiseprotocol-0.3.1-py3-none-any.whl (20 kB)
+Collecting objgraph==3.6.2 (from -r /tmp/tmp_msbbqu6 (line 338))
+  Downloading objgraph-3.6.2-py3-none-any.whl (17 kB)
+Collecting packaging==24.2 (from -r /tmp/tmp_msbbqu6 (line 341))
+  Downloading packaging-24.2-py3-none-any.whl (65 kB)
+Collecting parameterized==0.9.0 (from -r /tmp/tmp_msbbqu6 (line 344))
+  Downloading parameterized-0.9.0-py2.py3-none-any.whl (20 kB)
+Collecting pathspec==0.12.1 (from -r /tmp/tmp_msbbqu6 (line 347))
+  Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+Collecting pexpect==4.9.0 (from -r /tmp/tmp_msbbqu6 (line 350))
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Collecting pkgutil-resolve-name==1.3.10 (from -r /tmp/tmp_msbbqu6 (line 353))
+  Downloading pkgutil_resolve_name-1.3.10-py3-none-any.whl (4.7 kB)
+Collecting platformdirs==4.3.6 (from -r /tmp/tmp_msbbqu6 (line 356))
+  Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+Collecting psutil==7.0.0 (from -r /tmp/tmp_msbbqu6 (line 359))
+  Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (277 kB)
+Collecting ptyprocess==0.7.0 (from -r /tmp/tmp_msbbqu6 (line 370))
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Collecting pycparser==2.22 (from -r /tmp/tmp_msbbqu6 (line 373))
+  Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Collecting pycryptodome==3.22.0 (from -r /tmp/tmp_msbbqu6 (line 376))
+  Downloading pycryptodome-3.22.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 5.4 MB/s eta 0:00:00
+Collecting pyenchant==3.2.2 (from -r /tmp/tmp_msbbqu6 (line 406))
+  Downloading pyenchant-3.2.2-py3-none-any.whl (55 kB)
+Collecting pygments==2.19.1 (from -r /tmp/tmp_msbbqu6 (line 411))
+  Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 5.2 MB/s eta 0:00:00
+Collecting pympler==1.1 (from -r /tmp/tmp_msbbqu6 (line 414))
+  Downloading Pympler-1.1-py3-none-any.whl (165 kB)
+Collecting pyparsing==3.1.4 (from -r /tmp/tmp_msbbqu6 (line 417))
+  Downloading pyparsing-3.1.4-py3-none-any.whl (104 kB)
+Collecting pytz==2025.2 (from -r /tmp/tmp_msbbqu6 (line 420))
+  Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Collecting pyyaml==6.0.2 (from -r /tmp/tmp_msbbqu6 (line 423))
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 6.8 MB/s eta 0:00:00
+Collecting recommonmark==0.7.1 (from -r /tmp/tmp_msbbqu6 (line 477))
+  Downloading recommonmark-0.7.1-py2.py3-none-any.whl (10 kB)
+Collecting referencing==0.35.1 (from -r /tmp/tmp_msbbqu6 (line 480))
+  Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+Collecting requests==2.32.3 (from -r /tmp/tmp_msbbqu6 (line 483))
+  Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Collecting rpds-py==0.20.1 (from -r /tmp/tmp_msbbqu6 (line 486))
+  Downloading rpds_py-0.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (364 kB)
+Collecting scapy==2.4.5 (from -r /tmp/tmp_msbbqu6 (line 590))
+  Downloading scapy-2.4.5.tar.gz (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 5.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting sh==2.2.2 (from -r /tmp/tmp_msbbqu6 (line 592))
+  Downloading sh-2.2.2-py3-none-any.whl (38 kB)
+Collecting six==1.17.0 (from -r /tmp/tmp_msbbqu6 (line 595))
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting snowballstemmer==2.2.0 (from -r /tmp/tmp_msbbqu6 (line 598))
+  Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+Collecting sphinx==7.1.2 (from -r /tmp/tmp_msbbqu6 (line 601))
+  Downloading sphinx-7.1.2-py3-none-any.whl (3.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 5.3 MB/s eta 0:00:00
+Collecting sphinx-rtd-theme==3.0.2 (from -r /tmp/tmp_msbbqu6 (line 604))
+  Downloading sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl (7.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.7/7.7 MB 5.4 MB/s eta 0:00:00
+Collecting sphinxcontrib-applehelp==1.0.4 (from -r /tmp/tmp_msbbqu6 (line 607))
+  Downloading sphinxcontrib_applehelp-1.0.4-py3-none-any.whl (120 kB)
+Collecting sphinxcontrib-devhelp==1.0.2 (from -r /tmp/tmp_msbbqu6 (line 610))
+  Downloading sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl (84 kB)
+Collecting sphinxcontrib-htmlhelp==2.0.1 (from -r /tmp/tmp_msbbqu6 (line 613))
+  Downloading sphinxcontrib_htmlhelp-2.0.1-py3-none-any.whl (99 kB)
+Collecting sphinxcontrib-jquery==4.1 (from -r /tmp/tmp_msbbqu6 (line 616))
+  Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+Collecting sphinxcontrib-jsmath==1.0.1 (from -r /tmp/tmp_msbbqu6 (line 619))
+  Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+Collecting sphinxcontrib-qthelp==1.0.3 (from -r /tmp/tmp_msbbqu6 (line 622))
+  Downloading sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl (90 kB)
+Collecting sphinxcontrib-serializinghtml==1.1.5 (from -r /tmp/tmp_msbbqu6 (line 625))
+  Downloading sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl (94 kB)
+Collecting sphinxcontrib-spelling==8.0.0 (from -r /tmp/tmp_msbbqu6 (line 628))
+  Downloading sphinxcontrib_spelling-8.0.0-py3-none-any.whl (16 kB)
+Collecting syslog-rfc5424-parser==0.3.2 (from -r /tmp/tmp_msbbqu6 (line 631))
+  Downloading syslog_rfc5424_parser-0.3.2-py3-none-any.whl (6.5 kB)
+Collecting tomli==2.2.1 (from -r /tmp/tmp_msbbqu6 (line 634))
+  Downloading tomli-2.2.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (242 kB)
+Collecting typing-extensions==4.13.1 (from -r /tmp/tmp_msbbqu6 (line 667))
+  Downloading typing_extensions-4.13.1-py3-none-any.whl (45 kB)
+Collecting urllib3==2.2.3 (from -r /tmp/tmp_msbbqu6 (line 670))
+  Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+Collecting wheel==0.45.1 (from -r /tmp/tmp_msbbqu6 (line 673))
+  Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+Collecting zipp==3.20.2 (from -r /tmp/tmp_msbbqu6 (line 676))
+  Downloading zipp-3.20.2-py3-none-any.whl (9.2 kB)
+Requirement already satisfied: pyproject_hooks in /home/user/vpp/build-root/test/venv/lib/python3.12/site-packages (from build==1.2.2.post1->-r /tmp/tmp_msbbqu6 (line 33)) (1.2.0)
+Building wheels for collected packages: lark-parser, scapy
+  Building wheel for lark-parser (setup.py): started
+  Building wheel for lark-parser (setup.py): finished with status 'done'
+  Created wheel for lark-parser: filename=lark_parser-0.6.7-py2.py3-none-any.whl size=53516 sha256=a2da6674b3b4fde7a628800f4983e67c488e27ca5feefa80d4d50145a8bd8e29
+  Stored in directory: /home/user/.cache/pip/wheels/bc/75/57/46c3b25520391e7497a0f9d14f2cc1a0ad108b1adac84bdeb8
+  Building wheel for scapy (setup.py): started
+  Building wheel for scapy (setup.py): finished with status 'done'
+  Created wheel for scapy: filename=scapy-2.4.5-py2.py3-none-any.whl size=1261537 sha256=0bf100b8b1c0321ac9ad67fb7126428c5ad1b1074f7e38db4520ba24375d6da8
+  Stored in directory: /home/user/.cache/pip/wheels/c5/ff/9f/430546652c855037de8c9839eb11879430f750ce381acc5f0e
+Successfully built lark-parser scapy
+Installing collected packages: snowballstemmer, pytz, ptyprocess, lark-parser, commonmark, zipp, wheel, urllib3, typing-extensions, tomli, syslog-rfc5424-parser, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, six, sh, scapy, rpds-py, pyyaml, pyparsing, pympler, pygments, pyenchant, pycryptodome, pycparser, psutil, platformdirs, pkgutil-resolve-name, pexpect, pathspec, parameterized, packaging, objgraph, mypy-extensions, markupsafe, importlib-resources, imagesize, idna, docutils, click, charset-normalizer, certifi, babel, attrs, alabaster, requests, referencing, jinja2, importlib-metadata, deprecation, cffi, build, black, sphinx, jsonschema-specifications, cryptography, sphinxcontrib-spelling, sphinxcontrib-jquery, recommonmark, noiseprotocol, jsonschema, sphinx-rtd-theme
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.48.0
+    Uninstalling wheel-0.48.0:
+      Successfully uninstalled wheel-0.48.0
+  Attempting uninstall: packaging
+    Found existing installation: packaging 26.3
+    Uninstalling packaging-26.3:
+      Successfully uninstalled packaging-26.3
+  Attempting uninstall: click
+    Found existing installation: click 8.5.0
+    Uninstalling click-8.5.0:
+      Successfully uninstalled click-8.5.0
+  Attempting uninstall: build
+    Found existing installation: build 1.6.0
+    Uninstalling build-1.6.0:
+      Successfully uninstalled build-1.6.0
+Successfully installed alabaster-0.7.13 attrs-25.3.0 babel-2.17.0 black-24.8.0 build-1.2.2.post1 certifi-2025.1.31 cffi-1.17.1 charset-normalizer-3.4.1 click-8.1.8 commonmark-0.9.1 cryptography-44.0.2 deprecation-2.1.0 docutils-0.20.1 idna-3.10 imagesize-1.4.1 importlib-metadata-8.5.0 importlib-resources-6.4.5 jinja2-3.1.6 jsonschema-4.23.0 jsonschema-specifications-2023.12.1 lark-parser-0.6.7 markupsafe-2.1.5 mypy-extensions-1.0.0 noiseprotocol-0.3.1 objgraph-3.6.2 packaging-24.2 parameterized-0.9.0 pathspec-0.12.1 pexpect-4.9.0 pkgutil-resolve-name-1.3.10 platformdirs-4.3.6 psutil-7.0.0 ptyprocess-0.7.0 pycparser-2.22 pycryptodome-3.22.0 pyenchant-3.2.2 pygments-2.19.1 pympler-1.1 pyparsing-3.1.4 pytz-2025.2 pyyaml-6.0.2 recommonmark-0.7.1 referencing-0.35.1 requests-2.32.3 rpds-py-0.20.1 scapy-2.4.5 sh-2.2.2 six-1.17.0 snowballstemmer-2.2.0 sphinx-7.1.2 sphinx-rtd-theme-3.0.2 sphinxcontrib-applehelp-1.0.4 sphinxcontrib-devhelp-1.0.2 sphinxcontrib-htmlhelp-2.0.1 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.3 sphinxcontrib-serializinghtml-1.1.5 sphinxcontrib-spelling-8.0.0 syslog-rfc5424-parser-0.3.2 tomli-2.2.1 typing-extensions-4.13.1 urllib3-2.2.3 wheel-0.45.1 zipp-3.20.2
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+--- patching ---
+for f in /home/user/vpp/test/patches/scapy-2.4.5/*.patch ; do \
+	echo Applying patch: $(basename $f) ; \
+	patch --forward -p1 -d /home/user/vpp/build-root/test/venv/lib/python3.12/site-packages < $f ; \
+	retCode=$?; \
+	[ $retCode -gt 1 ] && exit $retCode; \
+done; \
+touch /home/user/vpp/build-root/test/venv/run/pip-patch-3.done
+Applying patch: cdp.patch
+patching file scapy/contrib/cdp.py
+Hunk #1 succeeded at 382 (offset -10 lines).
+Applying patch: ikev2.patch
+patching file scapy/contrib/ikev2.py
+Applying patch: ipsec.patch
+patching file scapy/layers/ipsec.py
+Applying patch: ppp.patch
+patching file scapy/layers/ppp.py
+Hunk #1 succeeded at 296 (offset 4 lines).
+Hunk #2 succeeded at 316 (offset 4 lines).
+Applying patch: scapy-python312.patch
+patching file scapy/arch/bpf/core.py
+patching file scapy/arch/linux.py
+patching file scapy/arch/windows/__init__.py
+patching file scapy/asn1/asn1.py
+patching file scapy/asn1fields.py
+patching file scapy/base_classes.py
+patching file scapy/contrib/automotive/someip.py
+patching file scapy/contrib/cansocket_python_can.py
+patching file scapy/contrib/cdp.py
+patching file scapy/contrib/diameter.py
+patching file scapy/contrib/gtp.py
+Hunk #1 succeeded at 45 (offset 15 lines).
+patching file scapy/contrib/homeplugav.py
+patching file scapy/contrib/isis.py
+patching file scapy/contrib/isotp.py
+patching file scapy/contrib/ldp.py
+patching file scapy/contrib/lldp.py
+patching file scapy/contrib/nfs.py
+patching file scapy/contrib/ppi_geotag.py
+patching file scapy/contrib/skinny.py
+patching file scapy/contrib/tacacs.py
+patching file scapy/fields.py
+Hunk #1 succeeded at 38 (offset 1 line).
+patching file scapy/interfaces.py
+patching file scapy/layers/bluetooth4LE.py
+patching file scapy/layers/dhcp.py
+patching file scapy/layers/dns.py
+patching file scapy/layers/inet.py
+patching file scapy/layers/ipsec.py
+Hunk #1 succeeded at 56 with fuzz 1.
+patching file scapy/layers/l2.py
+patching file scapy/layers/ntp.py
+patching file scapy/layers/tftp.py
+patching file scapy/layers/tls/cert.py
+patching file scapy/layers/tls/crypto/prf.py
+patching file scapy/modules/krack/crypto.py
+patching file scapy/modules/p0f.py
+patching file scapy/modules/voip.py
+patching file scapy/plist.py
+patching file scapy/pton_ntop.py
+patching file scapy/scapypipes.py
+patching file scapy/sendrecv.py
+patching file scapy/tools/UTscapy.py
+patching file scapy/utils.py
+Hunk #1 succeeded at 29 with fuzz 1 (offset 1 line).
+patching file scapy/volatile.py
+Obtaining file:///home/user/vpp/src/vpp-api/python
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: vpp_papi
+  Building editable for vpp_papi (pyproject.toml): started
+  Building editable for vpp_papi (pyproject.toml): finished with status 'done'
+  Created wheel for vpp_papi: filename=vpp_papi-2.3.0-0.editable-py2.py3-none-any.whl size=7178 sha256=291690aeeb44180d70a46816e335a2afc2446e339d52325374afecab60d07b5f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-54shoz0t/wheels/22/83/eb/a324432c7ef8c479b4e4d9e25bbad77b0d9bf86a027e645655
+Successfully built vpp_papi
+Installing collected packages: vpp_papi
+Successfully installed vpp_papi-2.3.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+/home/user/vpp/build-root/test/venv/lib/python3.12/site-packages/scapy/layers/ipsec.py:483: CryptographyDeprecationWarning: Blowfish has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.Blowfish and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 45.0.0.
+  cipher=algorithms.Blowfish,
+/home/user/vpp/build-root/test/venv/lib/python3.12/site-packages/scapy/layers/ipsec.py:490: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+/home/user/vpp/build-root/test/venv/lib/python3.12/site-packages/scapy/layers/ipsec.py:494: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  cipher=algorithms.TripleDES,
+/home/user/vpp/build-root/test/venv/lib/python3.12/site-packages/scapy/layers/ipsec.py:497: CryptographyDeprecationWarning: CAST5 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.CAST5 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 45.0.0.
+  cipher=algorithms.CAST5,
+/home/user/vpp/build-root/test/venv/lib/python3.12/site-packages/scapy/base_classes.py:324: SyntaxWarning: Packet 'BFD' has a duplicated 'auth_key_hash' field ! If you are using several ConditionalFields, have a look at MultipleTypeField instead ! This will become a SyntaxError in a future version of Scapy !
+  warnings.warn(war_msg, SyntaxWarning)
+Config is: Namespace(failfast=False, test_src_dir=['/home/user/vpp/test'], verbose=0, timeout=600, failed_dir='/tmp/vpp-failed-unittests/', filter='test_rust_classify', skip_filter='', retries=0, step=False, debug=None, debug_framework=False, compress_core=False, extended=False, skip_netns_tests=True, sanity=True, api_preload=False, force_foreground=False, jobs=1, venv_dir='/home/user/vpp/build-root/test/venv', rnd_seed=1788707653.0275295, vpp_worker_count=0, gcov=False, cache_vpp_output=True, vpp_ws_dir='/home/user/vpp', vpp_tag='vpp_debug', vpp='/home/user/vpp/build-root/install-vpp_debug-native/vpp/bin/vpp', vpp_install_dir='/home/user/vpp/build-root/install-vpp_debug-native', vpp_build_dir='/home/user/vpp/build-root/build-vpp_debug-native', vpp_plugin_dir=['/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/vpp_plugins', '/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib64/vpp_plugins'], vpp_test_plugin_dir=['/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib/vpp_api_test_plugins', '/home/user/vpp/build-root/install-vpp_debug-native/vpp/lib64/vpp_api_test_plugins'], extern_plugin_dir=[], extern_apidir=[], coredump_size='unlimited', max_vpp_cpus=0, variant=None, api_fuzz=None, wipe_tmp_dir=True, tmp_dir='/tmp', log_dir=None, keep_pcaps=True, running_vpp=False, excluded_plugins=[], socket_dir='', decode_pcaps='failed')
+Running sanity test case.
+Sanity test case passed.
+OS reports 16 available cpu(s).
+Running at most 1 python test processes concurrently as set by 'TEST_JOBS'.
+Using at most 16 cpus for VPP threads.
+Running tests using custom test runner.
+Selected filters:  file=test_rust_classify.py, class=None, function=None
+Selected skip filters:  
+Adding tests from directory tree /home/user/vpp/test
+3 out of 2211 tests match specified filters
+Not running extended tests (some tests will be skipped)
+Running each VPPTestCase in a separate background process with at most 1 parallel python test process(es)
+==============================================================================
+Rust classification, actual forwarding/drop, counters, and trace. [main thread only]
+==============================================================================
+test_classification_and_trace (test_rust_classify.TestRustClassify.test_classification_and_trace) 0.64 OK
+test_disable_bypasses_classifier (test_rust_classify.TestRustClassify.test_disable_bypasses_classifier) 1.61 OK
+test_multiple_frames (test_rust_classify.TestRustClassify.test_multiple_frames) 0.71 OK
+
+==============================================================================
+TEST RESULTS:
+    Scheduled tests: 3
+     Executed tests: 3
+       Passed tests: 3
+==============================================================================
+
+Test run was successful
+Killing possible remaining process IDs:  31383 31385
+make[1]: Leaving directory '/home/user/vpp/test'

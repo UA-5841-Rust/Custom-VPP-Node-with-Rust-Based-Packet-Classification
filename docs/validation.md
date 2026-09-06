@@ -13,19 +13,18 @@
 - `cargo clippy --all-targets -- -D warnings`: could not launch. Windows
   Application Control blocked `cargo-clippy` with OS error 4551. Not a pass.
 
-## Pending in WSL/Linux
+## Verified in WSL/Linux
 
-- Linux Clippy and all Rust checks.
-- C-header compilation and static-link ABI smoke test.
-- VPP debug/release plugin compilation and dynamic loading.
-- Node registration, device-input wiring, PG forwarding/drop and real counters.
-- `make test TEST=test_rust_classify` and debug variant.
-- Actual `show plugins`, `show node`, `show errors`, `show trace`, `show run` logs.
-- Debug/GDB corrupted packet and empty-buffer checks.
+- Linux Clippy and all Rust checks: passed.
+- C-header compilation and static-link ABI smoke test: passed.
+- VPP debug/release plugin compilation and dynamic loading: passed.
+- Node registration, device-input wiring, packet forwarding/drop and counters: passed.
+- `make test TEST=test_rust_classify` and debug variant: 3/3 tests passed each.
+- Actual `show plugins`, `show node`, `show errors`, `show trace`, `show run` logs: captured in `artifacts/`.
+- Debug/GDB corrupted packet and empty-buffer checks: GDB smoke test passed.
 - Optional chained-buffer integration case and performance comparison.
 
-No VPP execution, Linux compilation, GDB success or performance result is claimed.
-The VPP-facing code is an implementation awaiting integration validation.
+VPP debug/release execution, Linux compilation, GDB smoke validation and runtime evidence are confirmed. Performance profiling was not performed.
 
 ## Evidence to record before PR
 

@@ -1,0 +1,224 @@
+------------------- Start of thread 0 vpp_main -------------------
+Packet 1
+
+00:02:46:132612: pg-input
+  stream valid_udp, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x0
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 1 port 4321 valid 1 error 0 next 1 rx 1 chained 0
+00:02:46:132769: pg0-output
+  pg0 flags 0x00000001
+  IP4: 02:00:00:00:00:02 -> 02:00:00:00:00:01
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132771: pg0-tx
+    buffer 0x7ffd2: current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x0
+  IP4: 02:00:00:00:00:02 -> 02:00:00:00:00:01
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+
+Packet 2
+
+00:02:46:132612: pg-input
+  stream ipv4_options, 110 bytes, sw_if_index 1, next_node 11
+  current data 0, length 110, buffer-pool 0, ref-count 1, trace handle 0x1
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    version 4, header length 24
+    tos 0x00, ttl 64, length 96, checksum 0xf487 dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 1 port 4321 valid 1 error 0 next 1 rx 1 chained 0
+00:02:46:132769: pg0-output
+  pg0 flags 0x00000001
+  IP4: 02:00:00:00:00:02 -> 02:00:00:00:00:01
+  UDP: 192.0.2.1 -> 192.0.2.2
+    version 4, header length 24
+    tos 0x00, ttl 64, length 96, checksum 0xf487 dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132771: pg0-tx
+    buffer 0x7ff88: current data 0, length 110, buffer-pool 0, ref-count 1, trace handle 0x1
+  IP4: 02:00:00:00:00:02 -> 02:00:00:00:00:01
+  UDP: 192.0.2.1 -> 192.0.2.2
+    version 4, header length 24
+    tos 0x00, ttl 64, length 96, checksum 0xf487 dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+
+Packet 3
+
+00:02:46:132612: pg-input
+  stream invalid_ethertype, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x2
+  0x8600: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 3 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 4
+
+00:02:46:132612: pg-input
+  stream non_udp, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x3
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  TCP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c (should be 0xf697) dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  TCP: 1234 -> 4321
+    seq. 0x00484723 ack 0x72757374
+    flags 0x76 SYN RST ACK URG ECE, tcp header: 8 bytes
+    window 28784, checksum 0x7275
+    
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 8 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 5
+
+00:02:46:132612: pg-input
+  stream fragment_mf, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x4
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c (should be 0xd68c) dscp CS0 ecn NON_ECN
+    fragment id 0x0001, flags MORE_FRAGMENTS
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 11 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 6
+
+00:02:46:132612: pg-input
+  stream fragment_offset, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x5
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c (should be 0xf68b) dscp CS0 ecn NON_ECN
+    fragment id 0x0001 offset 8
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 11 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 7
+
+00:02:46:132612: pg-input
+  stream truncated_payload, 105 bytes, sw_if_index 1, next_node 11
+  current data 0, length 105, buffer-pool 0, ref-count 1, trace handle 0x6
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 6 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 8
+
+00:02:46:132612: pg-input
+  stream invalid_version, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x7
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    version 6, header length 20
+    tos 0x00, ttl 64, length 92, checksum 0xf68c (should be 0xd68c) dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 4 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 9
+
+00:02:46:132612: pg-input
+  stream invalid_ihl, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x8
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    version 4, header length 16
+    tos 0x00, ttl 64, length 92, checksum 0xf68c (should be 0xf78c) dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 49152 -> 514
+    length 1234, checksum 0x10e1
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 5 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 10
+
+00:02:46:132612: pg-input
+  stream invalid_ip_length, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0x9
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 19, checksum 0xf68c (should be 0xf6d5) dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 72, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 6 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
+Packet 11
+
+00:02:46:132612: pg-input
+  stream invalid_udp_length, 106 bytes, sw_if_index 1, next_node 11
+  current data 0, length 106, buffer-pool 0, ref-count 1, trace handle 0xa
+  IP4: 02:00:00:00:00:01 -> 02:00:00:00:00:02
+  UDP: 192.0.2.1 -> 192.0.2.2
+    tos 0x00, ttl 64, length 92, checksum 0xf68c dscp CS0 ecn NON_ECN
+    fragment id 0x0001
+  UDP: 1234 -> 4321
+    length 7, checksum 0x4723
+00:02:46:132716: rust-classify-node
+  rust-classify: protocol 0 port 0 valid 0 error 7 next 0 rx 1 chained 0
+00:02:46:132754: error-drop
+  rx:pg0
+00:02:46:132763: drop
+  rust-classify-node: dropped
+
