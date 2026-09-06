@@ -1,0 +1,5 @@
+   Count                  Node                              Reason               Severity 
+         5         rust-classify-node                  malformed_packet            error  
+         4         rust-classify-node                unsupported_protocol          error  
+         2         rust-classify-node                    forwarded_ok              error  
+         9         rust-classify-node                      dropped                 error  
