@@ -127,3 +127,9 @@ sudo perf script > out.perf
 # 3. Render the final interactive SVG flame graph
 /path/to/FlameGraph/flamegraph.pl folded.perf > rust_vpp_flamegraph.svg
 ```
+
+### 4. Flame Graph Visualization
+
+Below is the generated flame graph illustrating the execution profile of the VPP process under load, highlighting the execution time spent within the `rust_classify_node_fn` and the `packet_classify` FFI boundary:
+
+![VPP Rust Plugin Flame Graph](./rust_classify_vpp_flamegraph.svg)
