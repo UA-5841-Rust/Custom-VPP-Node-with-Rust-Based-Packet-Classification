@@ -44,10 +44,11 @@ This project implements a custom **Vector Packet Processing (VPP)** graph node t
 
 ## Repository Structure
 
-* `src/` — Rust-based zero-copy network parser library (`network_parser`) with C FFI bindings.
+* `network_parser/` — Rust-based zero-copy network parser library (`network_parser`) with C FFI bindings.
 * `rust_classify/` — The VPP C plugin source code registering the `rust-classify` graph node.
+* `gen_test_pcap.py` — Generates `traffic.pcap`, the synthetic test traffic used by both manual CLI testing and `make test`.
 * `test_rust_classify.py` — Python / Scapy functional test case for VPP's `make test` framework.
-* `MONITORING.md` — Guide on traffic generation, CLI tracing, and GDB debugging.
+* `TESTING.md` — Manual testing guide: traffic generation, CLI tracing, real-capture validation, and GDB debugging.
 * `PERFORMANCE.md` — Performance benchmarks, `show run` metrics, and FFI overhead analysis.
 
 ---
@@ -89,6 +90,8 @@ Because the plugin relies on a compiled Rust static/dynamic library (`cdylib`/`s
    ```
    *(Note: Adjust CMake arguments depending on network_parser path).*
 
+   If you plan to follow the GDB debugging session in `TESTING.md`, also build the debug variant the same way, substituting `make debug` for `make build-release` — `TESTING.md`'s GDB walkthrough assumes a debug build is available.
+
 ---
 
 ## Running VPP
@@ -115,7 +118,7 @@ unix {
 plugins {
     plugin dpdk_plugin.so { disable }
     plugin unittest_plugin.so { enable }
-    plugin rust_classify.so { enable }
+    plugin rust_classify_plugin.so { enable }
 }
 
 socksvr {
@@ -146,7 +149,7 @@ set interface state tap0 up
    *(Note: Adjust CMake arguments depending on network_parser path).*
 
 2. **Manual CLI Traffic Testing & Tracing:**
-   Detailed instructions on using `packet-generator`, `trace add`, and `pcap trace` can be found in [TESTING.md](./TESTING.md).
+   Detailed instructions on using `packet-generator`, `trace add`, real-capture validation, and GDB debugging can be found in [TESTING.md](./TESTING.md).
 
 ---
 
