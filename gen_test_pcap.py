@@ -7,8 +7,8 @@ each case that network_parser::parse_packet must distinguish:
   p3 - Ethernet with EtherType=ARP (0x0806) instead of IPv4 (0x0800)
        -> is_valid=0, error_code = CPARSE_INVALID_ETHER_TYPE (3)
   p4 - valid packet with a physically truncated payload;
-       the UDP header still claims "I have X bytes", but there are
-       fewer bytes in the buffer -> is_valid=0, error_code = CPARSE_INVALID_UDP_LENGTH (7)
+       the IPv4 header still claims "I have X bytes", but there are
+       fewer bytes in the buffer -> is_valid=0, error_code = CPARSE_INVALID_IPV4_TOTAL_LEN (6)
 
 Usage:
   python3 gen_test_pcap.py

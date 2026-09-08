@@ -132,5 +132,19 @@ fn test_truncated_packet() {
     // Truncate mid-payload: only 6 bytes remain for the UDP header (needs 8).
     data.truncate(40);
     let result = parse_packet(&data);
+    assert_eq!(result, Err(ParseError::InvalidIpv4TotalLength));
+}
+
+#[test]
+fn test_udp_header_too_short() {
+    let mut data = valid_full_packet(&[]);
+
+    let bad_total_len: u16 = 26;
+    data[16..18].copy_from_slice(&bad_total_len.to_be_bytes());
+
+    data.truncate(14 + 26);
+
+    let result = parse_packet(&data);
+
     assert_eq!(result, Err(ParseError::PacketTooShort));
 }

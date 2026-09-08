@@ -87,32 +87,41 @@ class TestRustClassify(VppTestCase):
         pcap_file = f"{self.tempdir}/rust_test.pcap"
         wrpcap(pcap_file, pkts)
 
+        # Helper function to get counter values safely
+        def get_err_count(reason):
+            try:
+                return sum(self.statistics.get_counter(f"/err/rust-classify/{reason}"))
+            except KeyError:
+                return 0
+
         # Read initial error counters
-        start_valid = sum(
-            self.statistics.get_counter(
-                "/err/rust-classify/valid udp packets forwarded"
-            )
-        )
-        start_malf = sum(
-            self.statistics.get_counter("/err/rust-classify/malformed packets dropped")
-        )
+        start_valid = get_err_count("valid udp packets forwarded")
+        start_arp = get_err_count("invalid ethertype")
+        start_trunc = get_err_count("invalid ipv4 total length")
+        start_ver = get_err_count("invalid ipv4 version")
+        start_ihl = get_err_count("invalid ipv4 header length")
+
         # Generate traffic using VPP CLI
         self.vapi.cli(
-            f"packet-generator new {{ name rust_test node rust-classify pcap {pcap_file} }}"
+            f"packet-generator new {{ name rust_test node rust-classify pcap {pcap_file} limit 6 }}"
         )
         self.vapi.cli("packet-generator enable")
 
-        # Check results: 2 valid forwarded, 4 malformed dropped
-        end_valid = sum(
-            self.statistics.get_counter(
-                "/err/rust-classify/valid udp packets forwarded"
-            )
+        # Read final error counters
+        end_valid = get_err_count("valid udp packets forwarded")
+        end_arp = get_err_count("invalid ethertype")
+        end_trunc = get_err_count("invalid ipv4 total length")
+        end_ver = get_err_count("invalid ipv4 version")
+        end_ihl = get_err_count("invalid ipv4 header length")
+
+        # Check results: exactly matching our 6 injected packets
+        self.assertEqual(end_valid - start_valid, 2, "Valid UDP packets forwarded")
+        self.assertEqual(end_arp - start_arp, 1, "ARP packet dropped via EtherType")
+        self.assertEqual(
+            end_trunc - start_trunc, 1, "Truncated packet dropped via IPv4 Length"
         )
-        end_malf = sum(
-            self.statistics.get_counter("/err/rust-classify/malformed packets dropped")
-        )
-        self.assertEqual(end_valid - start_valid, 2)
-        self.assertEqual(end_malf - start_malf, 4)
+        self.assertEqual(end_ver - start_ver, 1, "Bad IP version dropped")
+        self.assertEqual(end_ihl - start_ihl, 1, "Bad IP header length dropped")
 
 
 if __name__ == "__main__":

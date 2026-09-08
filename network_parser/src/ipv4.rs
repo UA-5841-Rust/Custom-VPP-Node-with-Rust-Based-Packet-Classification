@@ -56,8 +56,9 @@ pub fn parse_ipv4_header(data: &[u8]) -> Result<(IpV4Header, usize), ParseError>
     let dscp_ecn = data[1];
 
     let total_len = u16::from_be_bytes([data[2], data[3]]);
-    // Total Length has to at least cover the header itself.
-    if (total_len as usize) < header_len {
+    // Total Length has to cover at least the header itself,
+    // and cannot exceed the actual buffer length we received.
+    if (total_len as usize) < header_len || (total_len as usize) > data.len() {
         return Err(ParseError::InvalidIpv4TotalLength);
     }
 

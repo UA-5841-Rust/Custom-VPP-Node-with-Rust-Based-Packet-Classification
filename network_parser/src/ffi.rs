@@ -175,6 +175,19 @@ mod tests {
         let truncated = &pkt[..pkt.len() - 3]; // cut into the payload
         let result = classify(truncated);
         assert!(!result.is_valid);
+        assert_eq!(
+            result.error_code,
+            CParseError::InvalidIpv4TotalLength as u32
+        );
+    }
+
+    #[test]
+    fn invalid_udp_length_inside_valid_ipv4_is_rejected() {
+        let mut pkt = build_packet(0x0800, 0x45, 17, b"hello");
+        pkt[38..40].copy_from_slice(&99u16.to_be_bytes());
+
+        let result = classify(&pkt);
+        assert!(!result.is_valid);
         assert_eq!(result.error_code, CParseError::InvalidUdpLength as u32);
     }
 

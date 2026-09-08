@@ -1,3 +1,5 @@
+# Testing
+
 To thoroughly test the Rust parser's edge cases, Python and `scapy` were used to generate a `.pcap` file rather than relying on raw hex strings in the VPP CLI. This approach ensures reproducible, documented test cases and prevents the VPP CLI text parser from auto-correcting intentionally malformed lengths or checksums.
 
 ### 1. Testing Using `packet-generator` with Controlled Packet Streams
@@ -26,9 +28,17 @@ To thoroughly test the Rust parser's edge cases, Python and `scapy` were used to
 **Expected Results:**
 * `error_code 0` (Success) for valid packets and packets with IP options.
 * `error_code 3` (`INVALID_ETHER_TYPE`) for the ARP packet.
-* `error_code 7` (`INVALID_UDP_LENGTH`) for the truncated packet.
+* `error_code 6` (`INVALID_IPV4_TOTAL_LEN`) for the truncated packet.
 
-The node counters correctly reflected 2 successfully forwarded packets and 2 gracefully dropped packets.
+The node counters now correctly reflect detailed statistics for 2 successfully forwarded packets and 2 gracefully dropped packets, categorized by their specific rejection reasons:
+
+**Example `show errors` output:**
+```plaintext
+   Count                    Node                  Reason
+      2                rust-classify              valid udp packets forwarded
+      1                rust-classify              invalid ethertype
+      1                rust-classify              invalid ipv4 total length
+```
 
 ---
 
@@ -112,7 +122,7 @@ To verify firsthand that the FFI boundary does not crash or trigger segmentation
     ```
 
 4. Open a secondary terminal window and connect to the VPP control console to trigger the packet generator using the malformed traffic pcap:
-    ```bash
+    ```plaintext
     # Note: Adjust the 'XXX-native' directory name based on your specific build architecture
     sudo ~/vpp/build-root/XXX-native/vpp/bin/vppctl
 
@@ -127,5 +137,5 @@ To verify firsthand that the FFI boundary does not crash or trigger segmentation
 * Execute `print b0->current_length` to inspect the physical length of the malformed buffer being passed across the boundary.
 * Step `next` over the Rust FFI function call. 
 * **Memory Safety Validation:** GDB successfully advances to the next C instruction without throwing a `SIGSEGV` (Segmentation Fault), proving that the Rust boundary safely handles unexpected buffer sizes.
-* Execute `print error0` to verify that the Rust parser returned the appropriate error code (e.g., `7` for truncated frames) instead of crashing the worker thread.
+* Execute `print error0` to verify that the Rust parser returned the appropriate error code (e.g., `6` for truncated frames caused by `INVALID_IPV4_TOTAL_LEN`) instead of crashing the worker thread.
 * Type `continue` (or `c`) to let the graph node finish processing the remaining packet vectors.

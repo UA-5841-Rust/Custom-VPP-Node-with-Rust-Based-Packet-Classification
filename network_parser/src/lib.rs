@@ -34,8 +34,13 @@ pub fn parse_packet(data: &[u8]) -> Result<Packet<'_>, ParseError> {
     let ethernet = ethernet::parse_ethernet_header(data)?;
     let (ipv4, header_len) = ipv4::parse_ipv4_header(&data[EthernetHeader::SIZE..])?;
 
+    let ip_end_idx = EthernetHeader::SIZE + (ipv4.total_len as usize);
+    if data.len() < ip_end_idx {
+        return Err(ParseError::InvalidIpv4TotalLength);
+    }
+
     let udp_start_idx = EthernetHeader::SIZE + header_len;
-    let udp = udp::parse_udp_packet(&data[udp_start_idx..])?;
+    let udp = udp::parse_udp_packet(&data[udp_start_idx..ip_end_idx])?;
 
     Ok(Packet {
         ethernet,

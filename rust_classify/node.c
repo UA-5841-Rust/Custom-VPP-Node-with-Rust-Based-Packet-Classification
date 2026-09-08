@@ -1,10 +1,10 @@
 #include <vlib/vlib.h>
-#include <vnet/vnet.h>
 #include <vnet/ethernet/ethernet.h>
+#include <vnet/vnet.h>
 #include <vppinfra/error.h>
 
-#include <rust_classify/rust_classify.h>
 #include <network_parser.h>
+#include <rust_classify/rust_classify.h>
 
 /* CParseError codes — mirror of `ffi.rs` enum (in rust network_parser).
  * cbindgen doesn't emit these on its own: ClassifyResult.error_code is
@@ -41,8 +41,8 @@ format_rust_classify_trace (u8 *s, va_list *args)
 	rust_classify_trace_t *t = va_arg (*args, rust_classify_trace_t *);
 
 	s = format (s,
-				"RUST-CLASSIFY: sw_if_index %d, next index %d, "
-				"valid %d, protocol %d, dest_port %d, error_code %d",
+				"RUST-CLASSIFY: sw_if_index %u, next index %u, "
+				"valid %u, protocol %u, dest_port %u, error_code %u",
 				t->sw_if_index, t->next_index, t->is_valid, t->protocol, t->dest_port,
 				t->error_code);
 	return s;
@@ -52,8 +52,14 @@ vlib_node_registration_t rust_classify_node;
 
 #define foreach_rust_classify_error                                                                \
 	_ (FORWARDED_OK, "valid udp packets forwarded")                                                \
-	_ (MALFORMED_PACKET, "malformed packets dropped")                                              \
-	_ (UNSUPPORTED_PROTOCOL, "non-udp packets dropped")
+	_ (NULL_POINTER, "null pointer")                                                               \
+	_ (PACKET_TOO_SHORT, "packet too short")                                                       \
+	_ (INVALID_ETHER_TYPE, "invalid ethertype")                                                    \
+	_ (INVALID_IPV4_VERSION, "invalid ipv4 version")                                               \
+	_ (INVALID_IPV4_HDR_LEN, "invalid ipv4 header length")                                         \
+	_ (INVALID_IPV4_TOTAL_LEN, "invalid ipv4 total length")                                        \
+	_ (INVALID_UDP_LENGTH, "invalid udp length")                                                   \
+	_ (UNSUPPORTED_PROTOCOL, "unsupported protocol")
 
 typedef enum
 {
@@ -82,9 +88,7 @@ VLIB_NODE_FN (rust_classify_node)
 	u32 n_left_from, *from, *to_next;
 	rust_classify_next_t next_index;
 
-	u32 n_forwarded_ok = 0;
-	u32 n_malformed = 0;
-	u32 n_unsupported = 0;
+	u32 error_counts[RUST_CLASSIFY_N_ERROR] = { 0 };
 
 	from = vlib_frame_vector_args (frame);
 	n_left_from = frame->n_vectors;
@@ -122,7 +126,7 @@ VLIB_NODE_FN (rust_classify_node)
 					if (result0.is_valid)
 						{
 							next0 = RUST_CLASSIFY_NEXT_IP4_LOOKUP;
-							n_forwarded_ok += 1;
+							error_counts[RUST_CLASSIFY_ERROR_FORWARDED_OK] += 1;
 
 							/* ip4-lookup expects vlib_buffer_get_current() to
 							 * point at the IPv4 header, not the Ethernet
@@ -133,15 +137,10 @@ VLIB_NODE_FN (rust_classify_node)
 							 * before dispatching to ip4-input/ip4-lookup. */
 							vlib_buffer_advance (b0, sizeof (ethernet_header_t));
 						}
-					else if (result0.error_code == CPARSE_UNSUPPORTED_PROTOCOL)
-						{
-							next0 = RUST_CLASSIFY_NEXT_DROP;
-							n_unsupported += 1;
-						}
 					else
 						{
 							next0 = RUST_CLASSIFY_NEXT_DROP;
-							n_malformed += 1;
+							error_counts[result0.error_code] += 1;
 						}
 
 					if (PREDICT_FALSE ((node->flags & VLIB_NODE_FLAG_TRACE) &&
@@ -163,34 +162,30 @@ VLIB_NODE_FN (rust_classify_node)
 			vlib_put_next_frame (vm, node, next_index, n_left_to_next);
 		}
 
-	if (n_forwarded_ok > 0)
-		vlib_node_increment_counter (vm, node->node_index, RUST_CLASSIFY_ERROR_FORWARDED_OK,
-									 n_forwarded_ok);
-	if (n_malformed > 0)
-		vlib_node_increment_counter (vm, node->node_index, RUST_CLASSIFY_ERROR_MALFORMED_PACKET,
-									 n_malformed);
-	if (n_unsupported > 0)
-		vlib_node_increment_counter (vm, node->node_index, RUST_CLASSIFY_ERROR_UNSUPPORTED_PROTOCOL,
-									 n_unsupported);
+	for (int i = 0; i < RUST_CLASSIFY_N_ERROR; i++)
+		{
+			if (error_counts[i] > 0)
+				vlib_node_increment_counter (vm, node->node_index, i, error_counts[i]);
+		}
 
 	return frame->n_vectors;
 }
 
 /* *INDENT-OFF* */
-VLIB_REGISTER_NODE (rust_classify_node) =
-{
+VLIB_REGISTER_NODE(rust_classify_node) = {
     .name = "rust-classify",
-    .vector_size = sizeof (u32),
+    .vector_size = sizeof(u32),
     .format_trace = format_rust_classify_trace,
     .type = VLIB_NODE_TYPE_INTERNAL,
 
-    .n_errors = ARRAY_LEN (rust_classify_error_strings),
+    .n_errors = ARRAY_LEN(rust_classify_error_strings),
     .error_strings = rust_classify_error_strings,
 
     .n_next_nodes = RUST_CLASSIFY_N_NEXT,
-    .next_nodes = {
-        [RUST_CLASSIFY_NEXT_IP4_LOOKUP] = "ip4-lookup",
-        [RUST_CLASSIFY_NEXT_DROP] = "error-drop",
-    },
+    .next_nodes =
+        {
+            [RUST_CLASSIFY_NEXT_IP4_LOOKUP] = "ip4-lookup",
+            [RUST_CLASSIFY_NEXT_DROP] = "error-drop",
+        },
 };
 /* *INDENT-ON* */
