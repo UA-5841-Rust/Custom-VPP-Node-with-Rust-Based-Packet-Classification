@@ -16,11 +16,14 @@ pub struct Packet<'a> {
     pub udp: Option<UdpPacket<'a>>,
 }
 
-/// Parses an Ethernet/IPv4/UDP packet without copying its payload.
 pub fn parse_packet(data: &[u8]) -> Result<Packet<'_>, ParseError> {
     let (ethernet, eth_payload) = EthernetHeader::parse(data)?;
 
     let (ipv4, ip_payload) = Ipv4Header::parse(eth_payload)?;
+
+    if ipv4.protocol != 17 {
+        return Err(ParseError::UnsupportedProtocol);
+    }
 
     let udp = UdpPacket::parse(ip_payload)?;
 

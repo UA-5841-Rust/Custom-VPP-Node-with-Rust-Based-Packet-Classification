@@ -6,4 +6,7 @@ edition = "2024"
 [dependencies]
 
 [lib]
-crate-type = ["staticlib", "cdylib"]
+crate-type = ["rlib", "staticlib", "cdylib"]
+
+[profile.release]
+panic = "abort"

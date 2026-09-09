@@ -1,4 +1,5 @@
 #[derive(Debug, PartialEq)]
+#[repr(u32)]
 pub enum ParseError {
     PacketTooShort,
     InvalidEtherType,

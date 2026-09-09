@@ -4,6 +4,24 @@ add_vpp_plugin(rust_classify
   rust_classify_node.c
 )
 
-set(RUST_LIB_DIR "/mnt/d/Rust projects/Custom-VPP-Node-with-Rust-Based-Packet-Classification/network_parser/target/release")
+set(NETWORK_PARSER_DIR "/mnt/d/Rust projects/Custom-VPP-Node-with-Rust-Based-Packet-Classification/network_parser"
+    CACHE PATH "Path to the network_parser crate")
 
-target_link_libraries(rust_classify_plugin ${RUST_LIB_DIR}/libnetwork_parser.a)
+set(NETWORK_PARSER_LIB ${NETWORK_PARSER_DIR}/target/release/libnetwork_parser.a)
+
+add_custom_command(
+  OUTPUT ${NETWORK_PARSER_LIB}
+  COMMAND cargo build --release --manifest-path ${NETWORK_PARSER_DIR}/Cargo.toml
+)
+
+add_custom_target(network_parser_rust ALL
+  DEPENDS ${NETWORK_PARSER_LIB})
+
+add_dependencies(rust_classify_plugin network_parser_rust)
+
+target_link_libraries(rust_classify_plugin
+  ${NETWORK_PARSER_LIB}
+  pthread
+  dl
+  m
+)
