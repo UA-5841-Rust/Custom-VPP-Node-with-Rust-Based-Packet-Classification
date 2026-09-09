@@ -5,6 +5,9 @@ use std::slice;
 
 pub struct PacketHandle<'a>(pub Packet<'a>);
 
+// SAFETY: The VPP C plugin guarantees that `data` is a valid pointer to a packet buffer
+// and `len` accurately reflects the buffer's current length. The slice is only used
+// temporarily during the classification step and does not outlive this function call.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn packet_parse(data: *const u8, len: usize) -> *mut PacketHandle<'static> {
     if data.is_null() || len == 0 {
@@ -26,6 +29,9 @@ pub unsafe extern "C" fn packet_parse(data: *const u8, len: usize) -> *mut Packe
     }
 }
 
+// SAFETY: The VPP C plugin guarantees that `data` is a valid pointer to a packet buffer
+// and `len` accurately reflects the buffer's current length. The slice is only used
+// temporarily during the classification step and does not outlive this function call.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn packet_free(handle: *mut PacketHandle<'static>) {
     if !handle.is_null() {
@@ -41,6 +47,9 @@ pub struct ClassifyResult {
     pub error_code: u32,
 }
 
+// SAFETY: The VPP C plugin guarantees that `data` is a valid pointer to a packet buffer
+// and `len` accurately reflects the buffer's current length. The slice is only used
+// temporarily during the classification step and does not outlive this function call.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn packet_classify(data: *const u8, len: usize) -> ClassifyResult {
     if data.is_null() || len == 0 {

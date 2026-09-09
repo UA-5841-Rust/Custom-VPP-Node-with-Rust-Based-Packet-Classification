@@ -1,11 +1,11 @@
 #[derive(Debug, PartialEq)]
 #[repr(u32)]
 pub enum ParseError {
-    PacketTooShort,
-    InvalidEtherType,
-    InvalidIpv4Version,
-    InvalidIpv4HeaderLength,
-    InvalidIpv4TotalLength,
-    InvalidUdpLength,
-    UnsupportedProtocol,
+    PacketTooShort = 1,
+    InvalidEtherType = 2,
+    InvalidIpv4Version = 3,
+    InvalidIpv4HeaderLength = 4,
+    InvalidIpv4TotalLength = 5,
+    InvalidUdpLength = 6,
+    UnsupportedProtocol = 7,
 }

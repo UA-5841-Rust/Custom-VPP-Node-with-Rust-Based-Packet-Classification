@@ -4,8 +4,7 @@ add_vpp_plugin(rust_classify
   rust_classify_node.c
 )
 
-set(NETWORK_PARSER_DIR "/mnt/d/Rust projects/Custom-VPP-Node-with-Rust-Based-Packet-Classification/network_parser"
-    CACHE PATH "Path to the network_parser crate")
+set(NETWORK_PARSER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../network_parser" CACHE PATH "Path to the network_parser crate")
 
 set(NETWORK_PARSER_LIB ${NETWORK_PARSER_DIR}/target/release/libnetwork_parser.a)
 
